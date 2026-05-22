@@ -97,7 +97,7 @@ Monitor file in real time
 
 `cat notes.txt | grep "Line" | sort | uniq | wc -l`  
 
-Read → filter → sort → remove duplicates → count
+Read → filter → sort → remove duplicates → count.
 
 ---
 
