@@ -1,4 +1,4 @@
-# Day XX – File Permissions & File Operations Challenge
+# Day 10 – File Permissions & File Operations Challenge
 
 ## 📂 Files Created
 
