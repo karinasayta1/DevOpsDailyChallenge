@@ -1,4 +1,4 @@
-# Day 10 – File Permissions & File Operations Challenge
+# Day 10 – File Permissions & File Operations 
 
 ## 📂 Files Created
 
