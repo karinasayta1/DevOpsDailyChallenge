@@ -208,4 +208,4 @@ mkdir -m 755 dir    # create dir with permission
 - Difference between read, write, execute  
 - sudo can override read/write but not execute  
 - Even without execute, script can run via interpreter  
-- Small concept but very important in real systems  
+- Small concept but very important in real systems.  
