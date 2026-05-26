@@ -204,8 +204,8 @@ mkdir -m 755 dir    # create dir with permission
 
 ## 🚀 What I Learned
 
-- How file permissions actually work in real  
-- Difference between read, write, execute  
-- sudo can override read/write but not execute  
-- Even without execute, script can run via interpreter  
+- How file permissions actually work in real. 
+- Difference between read, write, execute. 
+- sudo can override read/write but not execute.  
+- Even without execute, script can run via interpreter.
 - Small concept but very important in real systems.  
