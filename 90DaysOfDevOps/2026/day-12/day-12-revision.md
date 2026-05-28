@@ -15,7 +15,7 @@ Take a pause to consolidate everything learned so far and strengthen fundamental
 ## ⚙️ Processes & Services (Re-run Observations)
 Commands practiced:
 - `ps aux` → Observed multiple background processes; helps identify CPU-heavy tasks.
-- `systemctl status nginx` → Verified service is active and running.
+- `systemctl status service_name` → Verified service is active and running.
 - `journalctl -u nginx` → Checked logs for debugging and service behavior.
 
 ---
