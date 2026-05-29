@@ -10,8 +10,7 @@ Commands practiced:
 - `lsblk` → Identified available disks and partitions  
 - `df -h` → Checked mounted filesystem usage  
 
-📸 Screenshot:
-images/lsblk.png  
+![snapshot](images/lsblk.png)  
 
 ---
 
@@ -20,8 +19,7 @@ Commands practiced:
 - `pvcreate /dev/nvme1n1` → Initialized disk as Physical Volume  
 - `pvs` → Verified PV creation  
 
-📸 Screenshot:
-images/pv-created.png  
+![snapshot](images/pv-created.png)  
 
 ---
 
@@ -30,8 +28,7 @@ Commands practiced:
 - `vgcreate devops-vg /dev/nvme1n1` → Created Volume Group  
 - `vgs` → Verified VG  
 
-📸 Screenshot:
-images/vg-created.png  
+![snapshot](images/vg-created.png)  
 
 ---
 
@@ -40,8 +37,7 @@ Commands practiced:
 - `lvcreate -L 1G -n app-data devops-vg` → Created Logical Volume  
 - `lvs` → Verified LV  
 
-📸 Screenshot:
-images/lv-created.png  
+![snapshot](images/lv-created.png)  
 
 ---
 
@@ -52,8 +48,7 @@ Commands practiced:
 - `mount /dev/devops-vg/app-data /mnt/app-data` → Mounted volume  
 - `df -h` → Verified mount  
 
-📸 Screenshot:
-images/mounted.png  
+![snapshot](images/mounted.png)  
 
 ---
 
@@ -63,8 +58,7 @@ Commands practiced:
 - `resize2fs /dev/devops-vg/app-data` → Resized filesystem  
 - `df -h` → Verified updated size  
 
-📸 Screenshot:
-images/extended.png  
+![snapshot](images/extended.png)  
 
 ---
 
@@ -97,8 +91,7 @@ images/extended.png
 # 5. (Optional) Remove mount directory
 -'rm -rf /mnt/app-data'
 
-📸 Screenshot:
-images/deletion.png  
+![snapshot](images/deletion.png)  
 
 ## 🧪 Mini Self-Check
 
