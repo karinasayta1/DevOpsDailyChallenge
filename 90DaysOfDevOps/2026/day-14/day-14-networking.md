@@ -41,9 +41,7 @@ curl https://www.google.com
 ```
 
 → HTTP (Application) → TCP (Transport) → IP (Internet)
-
-📸 Screenshot:
-images/curl.png  
+![snapshot](images/curl.png)
 
 ---
 
@@ -59,9 +57,7 @@ This is your EC2 instance IP inside the VPC (AWS internal network).
 172.17.0.1 → Docker bridge network IP
 This appears when Docker is installed
 It’s used for container networking (docker0 interface)
-
-📸 Screenshot:
-images/hostname.png  
+![snapshot](images/hostname.png)  
 
 ---
 
@@ -70,9 +66,7 @@ images/hostname.png
 ping <target>
 ```
 **Observation:** 0% packet loss with ~4006 ms average latency confirms good network connectivity.
-
-📸 Screenshot:
-images/ping.png
+![snapshot](images/ping.png)
 ---
 
 ### 🛣️ Path
@@ -80,18 +74,14 @@ images/ping.png
 traceroute <target>
 ```
 **Observation:** 30 hops max with ~80.629 ms latency. Slight delay at hop 2.
-
-📸 Screenshot:
-images/traceroute.png
+![snapshot](images/traceroute.png)
 ---
 
 ### 🔌 Ports
 ```bash
 ss -tulpn
 ```
-
-📸 Screenshot:
-images/port.png
+![snapshot](images/port.png)
 ---
 
 ### 🌍 Name Resolution
@@ -99,9 +89,7 @@ images/port.png
 dig <domain>
 ```
 **Observation:** Domain resolves to `142.250.70.46`.
-
-📸 Screenshot:
-images/dig.png
+![snapshot](images/dig.png)
 
 ---
 
@@ -110,9 +98,7 @@ images/dig.png
 curl -I <http/https-url>
 ```
 **Observation:** HTTP/1.1 200 OK — server responded successfully.
-
-📸 Screenshot:
-images/curl-google.png
+![snapshot](images/curl-google.png)
 
 ---
 
@@ -123,9 +109,7 @@ netstat -an | head
 **Observation:**  
 - LISTEN: 3 to 5 entries (ports 40293, 22, 80)  
 - ESTABLISHED: 2 entries (HTTPS connections)
-
-📸 Screenshot:
-images/netstat.png
+![snapshot](images/netstat.png)
 
 ---
 
@@ -133,9 +117,7 @@ images/netstat.png
 
 ### Service Identified
 - nginx running on port 80
-
-📸 Screenshot:
-images/nginx.png
+![snapshot](images/nginx.png)
 
 ### Test Port
 ```bash
@@ -143,9 +125,7 @@ nc -zv localhost 80
 ```
 
 **Result:** Connection succeeded
-
-📸 Screenshot:
-images/test-port.png
+![snapshot](images/test-port.png)
 ---
 
 ### If Not Reachable
