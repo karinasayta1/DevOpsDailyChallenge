@@ -109,7 +109,7 @@ else
 fi
 ```
 📸 Screenshot
-![snapshot](scripts/file_check.png)
+![snapshot](scripts/file-check.png)
 ---
 
 ## 🔧 Task 5: Combine It All
