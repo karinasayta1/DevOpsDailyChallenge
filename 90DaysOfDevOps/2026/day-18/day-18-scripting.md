@@ -23,8 +23,8 @@ add() {
 }
 
 # Calling functions
-greet "Shubham"
-add 5 10
+greet "karina"
+add 5 6
 ```
 
 📸 Output
