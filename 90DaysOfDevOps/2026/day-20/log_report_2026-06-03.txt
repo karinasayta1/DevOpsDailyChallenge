@@ -1,0 +1,17 @@
+===== Log Analysis Report =====
+Date: 2026-06-03
+Log File: logs_file.log
+Total Lines: 61
+Total Errors: 46
+
+--- Top 5 Error Messages ---
+     11    Out of memory
+      9    Permission denied
+      9    File not found
+      9    Connection timed out
+      8    Disk I/O error
+
+--- Critical Events ---
+10:2026-06-03 09:09:50 CRITICAL Disk space below threshold
+27:2026-06-03 09:26:40 CRITICAL Database connection lost
+53:2026-06-03 09:52:45 CRITICAL Kernel panic detected
