@@ -36,7 +36,7 @@ In this project, I built a Bash script to automate log analysis and generate a s
 
 ![snapshot](./output.png)
 
-[Here is the report file generated](archive/log_report_2026-02-14-01-55.txt)
+[Here is the report file generated](./log_report_2026-06-03.txt)
 
 ## 📊 Sample Output
 
