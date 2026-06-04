@@ -123,6 +123,7 @@ Each commit has a unique commit ID.
 ```bash
 git log
 ```
+![snapshot](images/git-log.png)
 
 Shows:
 
