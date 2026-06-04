@@ -153,7 +153,7 @@ git commit -m "Updated git commands with more examples"
 ```
 
 Creates a new version (snapshot) of your project.
-
+![snapshot](images/git-command.png)
 ---
 
 ### View Compact History
