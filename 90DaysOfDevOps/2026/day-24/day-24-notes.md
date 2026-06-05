@@ -152,8 +152,8 @@ Cherry-pick only the second commit from `feature-hotfix` onto `main`.
 Verify with `git log` that only that one commit was applied.
 
 **Snapshots:**
-![snapshot](./images/cherry-pick1.png)
-![snapshot](./images/cherry-pick2.png)
+![snapshot](./images/cherry-pick.png)
+
 
 ---
 
