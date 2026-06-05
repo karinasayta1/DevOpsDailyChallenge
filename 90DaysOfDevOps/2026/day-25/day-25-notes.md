@@ -231,7 +231,7 @@ Because it does not rewrite history.
 
 ### 📸 Branching Strategy Diagram
 
-![snapshot](./image/git-branching-stratergy.png)
+![snapshot](./images/git-branching-stratergy.png)
 
 ---
 
