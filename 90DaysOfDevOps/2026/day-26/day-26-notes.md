@@ -69,7 +69,7 @@ Follow prompts:
 ```bash
 gh auth status
 ```
-[snapshot](./images/install-auth.png)
+![snapshot](./images/install-auth.png)
 
 ### 🧠 Answer
 
@@ -87,42 +87,42 @@ gh auth status
 ```bash
 gh repo create my-test-repo --public --clone --add-readme
 ```
-[snapshot](./images/create-repo.png)
+![snapshot](./images/create-repo.png)
 
 ### Clone Repo
 
 ```bash
 gh repo clone username/repo-name
 ```
-[snapshot](./images/clone-repo.png)
+![snapshot](./images/clone-repo.png)
 
 ### View Repo
 
 ```bash
 gh repo view
 ```
-[snapshot](./images/repo-view.png)
+![snapshot](./images/repo-view.png)
 
 ### List Repos
 
 ```bash
 gh repo list
 ```
-[snapshot](./images/repo-list.png)
+![snapshot](./images/repo-list.png)
 
 ### Open in Browser
 
 ```bash
 gh repo view --web
 ```
-[snapshot](./images/repo-view.png)
+![snapshot](./images/repo-view.png)
 
 ### Delete Repo
 
 ```bash
 gh repo delete repo-name --yes
 ```
-[snapshot](./images/delete-repo.png)
+![snapshot](./images/delete-repo.png)
 
 ---
 
@@ -151,7 +151,7 @@ gh issue view 1
 ```bash
 gh issue close 1
 ```
-[snapshot](./images/gh-issue.png)
+![snapshot](./images/gh-issue.png)
 
 ### 🧠 Answer
 
@@ -193,7 +193,7 @@ gh pr view 1
 ```bash
 gh pr merge 1 --merge
 ```
-[snapshot](./images/PR.png)
+![snapshot](./images/PR.png)
 
 ### 🧠 Answers
 
@@ -231,7 +231,7 @@ gh run list
 ```bash
 gh run view <run-id>
 ```
-[snapshot](./images/github_actions.png)
+![snapshot](./images/github_actions.png)
 
 ### 🧠 Answer
 
