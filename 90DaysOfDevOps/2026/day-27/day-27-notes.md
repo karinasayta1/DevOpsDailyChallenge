@@ -21,8 +21,20 @@ Before making changes, assess where you stand:
 ## Task 3: Organize Your Repositories
 
 1. **90 Days of DevOps** — 
-    
+    1. **90 Days of DevOps** — 
     * [90 Days of DevOps Repository](https://github.com/karinasayta1/DevOpsDailyChallenge/tree/main/90DaysOfDevOps/2026)
+
+    2. **Shell Scripts** — a dedicated repo for all your shell scripting work
+
+    * [Shell Scripts Repository](https://github.com/karinasayta1/shell-scripting)
+
+    3. **Python Scripts** — a dedicated repo for your Python projects
+
+    * [Python Repository](https://github.com/karinasayta1/python-for-devops)
+
+    4. **DevOps Notes** — a repo for your learning notes, cheat sheets, and references
+
+    * [DevOps Notes](https://github.com/karinasayta1/Devops-Notes.git)
 
 ---
 
