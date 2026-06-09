@@ -36,6 +36,15 @@ Research and write short notes on:
 1. Install Docker on your machine (or use a cloud instance)
 2. Verify the installation
 3. Run the `hello-world` container
+    ### Run hello-world
+    ```bash
+    docker run hello-world
+    ```
+    What happens:
+    - Downloads image from Docker Hub  
+    - Creates container  
+    - Runs it and prints message 
+
 4. Read the output carefully — it explains what just happened
     
     ![snapshot](images/hello-world.png)
@@ -44,10 +53,26 @@ Research and write short notes on:
 
 ## Task 3: Run Real Containers
 1. Run an **Nginx** container and access it in your browser
-
+```bash
+docker run -d -p 8080:80 nginx
+```
+Explanation:
+- `docker run` → Create & start container  
+- `-d` → Run in background (detached mode)  
+- `-p 8080:80` → Map port  
+  - 8080 (your system) → 80 (container)  
+- `nginx` → Image name 
     ![snapshot](images/nginx.png)
     
 2. Run an **Ubuntu** container in interactive mode — explore it like a mini Linux machine
+```bash
+docker run -it ubuntu bash
+```
+
+👉 Explanation:
+- `-it` → Interactive terminal  
+- `ubuntu` → Image  
+- `bash` → Start bash shell 
 
     ![snapshot](images/ubuntu.png)
     
@@ -55,40 +80,111 @@ Research and write short notes on:
 
     ![snapshot](images/ps.png)
     
-4. List all containers (including stopped ones)
+4. List all containers 
+```bash
+docker ps
+```
+ Shows all containers (running)  
 
+```bash
+docker ps -a
+```
+ Shows all containers (running + stopped)  
     ![snapshot](images/ps-a.png)
     
 5. Stop and remove a container
+```bash
+docker stop <container_id>
+```
+Stops a running container  
+
+---
+
+### ❌ Remove Container
+
+```bash
+docker rm <container_id>
+```
+Deletes a container  
 
     ![snapshot](images/rm-stop.png)
 
 ---
 
 ## Task 4: Explore
+
 1. Run a container in **detached mode** — what's different?
-  * Running a container in detached mode frees terminal, container run in background, we only get container id and 
-    manage it using docker commands with its id.
+  * Running a container in detached mode frees terminal, container run in background, we only get container id and manage it using docker commands with its id.
   * Running directly without -d, runs it in foreground, it shows live logs.outputs, pressing ctl+c stops it 
     and exits container.
-    
+
+```bash
+docker run -d nginx
+```
+👉 `-d` → Runs container in background  
+👉 Output → Shows container ID only  
+
+```bash
+docker run nginx
+```
+👉 Runs in foreground  
+👉 Shows live logs  
+👉 `Ctrl + C` stops container  
+
+---
+
 2. Give a container a custom **name**
+
+```bash
+docker run -d --name my-nginx nginx
+```
+👉 `--name` → Assigns custom name instead of random ID  
+👉 You can use `my-nginx` in further commands  
+
+---
+
 3. Map a **port** from the container to your host
 
-    ![snapshot](images/name.png)
-    
+```bash
+docker run -d -p 8080:80 nginx
+```
+👉 `-p 8080:80`  
+- 8080 → Host machine  
+- 80 → Container  
+
+👉 Access in browser: `http://localhost:8080`
+
+![snapshot](images/name.png)
+
+---
+
 4. Check **logs** of a running container
 
-    ![snapshot](images/logs.png)
-    
+```bash
+docker logs my-nginx
+```
+👉 Displays logs/output of container  
+👉 Useful for debugging  
+
+![snapshot](images/logs.png)
+
+---
+
 5. Run a command **inside** a running container
 
-    ![snapshot](images/exec.png)
+```bash
+docker exec -it my-nginx bash
+```
+👉 `exec` → Run command inside container  
+👉 `-it` → Interactive mode  
+👉 `bash` → Opens terminal inside container  
+
+![snapshot](images/exec.png)
 
 ---
 
 ## Deployed on nginx in container locally
 
 ![snapshot](images/page1.png)
-    
+     
 ![snapshot](images/page2.png)
