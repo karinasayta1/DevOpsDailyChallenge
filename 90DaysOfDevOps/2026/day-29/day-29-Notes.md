@@ -77,14 +77,12 @@ docker run -it ubuntu bash
     ![snapshot](images/ubuntu.png)
     
 3. List all running containers
-
-    ![snapshot](images/ps.png)
-    
-4. List all containers 
 ```bash
 docker ps
 ```
- Shows all containers (running)  
+    ![snapshot](images/ps.png)
+    
+4. List all containers 
 
 ```bash
 docker ps -a
@@ -130,6 +128,8 @@ docker run nginx
 👉 Runs in foreground  
 👉 Shows live logs  
 👉 `Ctrl + C` stops container  
+
+![snapshot](images/nginx2.png)
 
 ---
 
@@ -182,9 +182,3 @@ docker exec -it my-nginx bash
 ![snapshot](images/exec.png)
 
 ---
-
-## Deployed on nginx in container locally
-
-![snapshot](images/page1.png)
-     
-![snapshot](images/page2.png)
