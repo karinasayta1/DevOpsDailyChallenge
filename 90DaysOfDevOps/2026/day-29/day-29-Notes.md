@@ -80,7 +80,7 @@ docker run -it ubuntu bash
 ```bash
 docker ps
 ```
-    ![snapshot](images/ps.png)
+![snapshot](images/ps.png)
     
 4. List all containers 
 
@@ -105,7 +105,7 @@ docker rm <container_id>
 ```
 Deletes a container  
 
-    ![snapshot](images/rm-stop.png)
+![snapshot](images/rm-stop.png)
 
 ---
 
