@@ -164,28 +164,16 @@ docker run -p 8080:80 my-website:v1
 http://localhost:8080
 ```
 
-## Result
+![snapshot](images/web-app.png)
 
-Nginx serves your HTML page
-
----
-
-# Task 5: .dockerignore
-
-## Create file
-
-```bash
-touch .dockerignore
-```
-
-## Add content
-
-```
-node_modules
-.git
-*.md
-.env
-```
+## Task 5: .dockerignore
+1. Create a `.dockerignore` file in one of your project folders
+2. Add entries for: `node_modules`, `.git`, `*.md`, `.env`
+3. Build the image — verify that ignored files are not included
+    
+   ![snapshot](images/before-ignore.png)
+    
+   ![snapshot](images/after-ignore.png)
 
 ## Why
 
