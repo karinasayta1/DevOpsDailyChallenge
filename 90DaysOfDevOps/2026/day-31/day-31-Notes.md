@@ -215,6 +215,4 @@ COPY . .
 * Faster builds
 * Better caching
 
-```
-
 
