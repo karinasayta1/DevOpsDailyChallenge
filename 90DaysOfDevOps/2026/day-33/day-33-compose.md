@@ -41,7 +41,9 @@ Docker Compose version v2.x.x
 ```
 
 ✅ If this works → you're ready
+
 ❌ If not → install Docker Desktop or Compose plugin
+
 ![snapshot](images/install.png)
 ---
 
@@ -83,6 +85,7 @@ docker compose up -d
 ```
 http://localhost:8080
 ```
+
 ![snapshot](images/browser.png)
 
 ## Step 6: Stop and remove
@@ -90,7 +93,9 @@ http://localhost:8080
 ```bash
 docker compose down
 ```
+
 ![snapshot](images/first-docker-compose.png)
+
 ---
 
 # 📌 Task 3: Two-Container Setup (WordPress + MySQL)
@@ -168,6 +173,7 @@ volumes:
 ```bash
 docker compose up -d
 ```
+
 ![snapshot](images/two-container.png)
 
 
@@ -176,6 +182,7 @@ docker compose up -d
 ```
 http://localhost:8081
 ```
+
 ![snapshot](images/site.png)
 
 ## Step 5: Stop & test persistence
@@ -186,7 +193,8 @@ docker compose up -d
 ```
 
 ✅ Your WordPress data should still exist
-![snapshot](images/two-container-verify)
+
+![snapshot](images/two-container-verify.png)
 
 ---
 
@@ -197,21 +205,22 @@ docker compose up -d
 ```bash
 docker compose up -d
 ```
-![snapshot](images/dc)
+
+![snapshot](images/dc.png)
 
 ## 2. View running containers
 
 ```bash
 docker compose ps
 ```
-![snapshot](images/ps)
+![snapshot](images/ps.png)
 
 ## 3. View logs (all services)
 
 ```bash
 docker compose logs
 ```
-![snapshot](images/logs)
+![snapshot](images/logs.png)
 
 ## 4. View logs (specific service)
 
@@ -219,35 +228,35 @@ docker compose logs
 docker compose logs wordpress
 docker compose logs db
 ```
-![snapshot](images/view-logs)
+![snapshot](images/view-logs.png)
 
 ## 5. Stop services (without deleting)
 
 ```bash
 docker compose stop
 ```
-![snapshot](images/stop)
+![snapshot](images/stop.png)
 
 ## 6. Start again
 
 ```bash
 docker compose start
 ```
-![snapshot](images/start)
+![snapshot](images/start.png)
 
 ## 7. Remove everything
 
 ```bash
 docker compose down
 ```
-![snapshot](images/down)
+![snapshot](images/down.png)
 
 ## 8. Remove including volumes (⚠️ data loss)
 
 ```bash
 docker compose down -v
 ```
-![snapshot](images/down-v)
+![snapshot](images/down-v.png)
 
 
 ## 9. Rebuild containers
@@ -255,7 +264,7 @@ docker compose down -v
 ```bash
 docker compose up --build
 ```
-![snapshot](images/build)
+![snapshot](images/build.png)
 
 ---
 
@@ -292,7 +301,7 @@ environment:
   MYSQL_USER: ${MYSQL_USER}
   MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 ```
-![snapshot](images/env)
+![snapshot](images/env.png)
 ---
 
 ## Step 3: Verify variables
@@ -300,7 +309,7 @@ environment:
 ```bash
 docker compose config
 ```
-![snapshot](images/config)
+![snapshot](images/config.png)
 ---
 
 # ⚡ Quick Cheat Sheet
@@ -336,4 +345,4 @@ You can now:
 * Persist data
 * Manage containers like a pro
 
-Next → Production-ready setups 🚀
+Next → Production-ready setups 
