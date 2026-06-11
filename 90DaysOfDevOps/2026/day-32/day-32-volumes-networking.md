@@ -25,8 +25,6 @@ docker exec -it my-db psql -U postgres
 
 ## Step 3: Create table & insert data
 
-![snapshot](images/1.1.png)
-
 ## Step 4: Stop and remove container
 
 ```bash
