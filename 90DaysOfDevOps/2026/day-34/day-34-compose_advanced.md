@@ -282,7 +282,7 @@ docker compose up --build
 ![snapshot](images/task4-hello.png)
 ---
 
-# 💾 Task 5: Named Networks & Voddlumes
+# 💾 Task 5: Named Networks & Volumes
 
 ## Add Volume
 
