@@ -1,0 +1,14 @@
+name: Karina
+role: DevOps Engineer
+experience_years: 1
+learning: true
+hobbies:[Dancing, Cooking, Reading]
+tools:
+  - linux
+  - shell scripting
+  - netwroking
+  - docker
+  - git & github
+  - github actions
+
+  
