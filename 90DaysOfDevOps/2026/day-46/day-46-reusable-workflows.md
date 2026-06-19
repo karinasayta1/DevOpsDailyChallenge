@@ -150,8 +150,8 @@ jobs:
       - name: Print Version
         run: echo "Build version is ${{ needs.build.outputs.build_version }}"
 ```
-![snapshot](images/reusable-workflow.png)
 ---
+![snapshot](images/reusable_workflow.png)
 
 # ⚙️ Task 4: Outputs
 
@@ -165,8 +165,8 @@ Reusable workflows can return values using `outputs`
 
 * Generated version: `v1.0-<short-sha>`
 * Passed to caller using `needs`
-![snapshot](images/print-version.png)
 ---
+![snapshot](images/print_version.png)
 
 # ⚙️ Task 5: Composite Action
 
