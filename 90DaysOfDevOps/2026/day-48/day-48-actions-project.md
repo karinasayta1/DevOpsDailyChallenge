@@ -4,7 +4,7 @@
 
 ###  [All YML files created](https://github.com/karinasayta1/github-actions-capstone/tree/main/.github/workflows)
 
-### [Docker Hub Link to image](https://hub.docker.com/repository/docker/afroz25/my-app/general)
+### [Docker Hub Link to image](https://hub.docker.com/repository/docker/karinasayta1/my-app/general)
 
 ## Task 1: Set Up the Project Repo
 1. Create a new repo called `github-actions-capstone` (or use your existing `github-actions-practice`)
