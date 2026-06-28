@@ -305,12 +305,3 @@ kubectl delete pv pv-demo
 * Binding connects them
 * StorageClass enables automation
 
-```
-
----
-
-If you want next, I can also give you:
-- 🔥 One-page cheat sheet (for revision before interviews)
-- 🔥 Real-world project (MySQL + PV in Kubernetes)
-- 🔥 Diagram explanation (super easy memory trick)
-```
