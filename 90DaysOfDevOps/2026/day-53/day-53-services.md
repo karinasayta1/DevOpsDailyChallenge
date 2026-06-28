@@ -257,7 +257,7 @@ Only the built-in `kubernetes` service in the default namespace should remain.
 
 **Verify:** Is everything cleaned up?
 
-   ![snapshot](images/deleted.png)
+   ![snapshot](images/delete.png)
 
 ---
 
