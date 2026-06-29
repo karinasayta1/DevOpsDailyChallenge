@@ -468,7 +468,7 @@ Or delete everything at once
 kubectl delete pod --all
 kubectl delete svc readiness-svc
 ```
-
+![snapshot](images/task7.png) 
 ---
 
 # Key Concepts
