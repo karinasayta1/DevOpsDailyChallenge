@@ -73,7 +73,7 @@ Limits:
 
 QoS Class: Burstable
 ```
-
+![snapshot](images/task1.png) 
 ### Verification Answer
 
 **QoS Class:** `Burstable`
