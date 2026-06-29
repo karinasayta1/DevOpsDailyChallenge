@@ -144,7 +144,9 @@ or
 ```bash
 kubectl logs oom-pod
 ```
-
+![snapshot](images/task2.png) 
+![snapshot](images/task2.a.png) 
+![snapshot](images/task2.b.png) 
 ### Verification Answer
 
 **Exit Code:** `137`
@@ -215,7 +217,8 @@ Scheduler event:
 ```
 0/1 nodes are available: 1 Insufficient cpu, Insufficient memory.
 ```
-
+![snapshot](images/task3.a.png) 
+![snapshot](images/task3.b.png) 
 ---
 
 # Task 4 – Liveness Probe
@@ -285,6 +288,9 @@ Look for
 ```
 Restart Count
 ```
+![snapshot](images/task4.a.png) 
+![snapshot](images/task4.b.png) 
+![snapshot](images/task4.c.png) 
 
 ### Verification Answer
 
@@ -363,7 +369,7 @@ Check endpoints again
 ```bash
 kubectl get endpoints readiness-svc
 ```
-
+![snapshot](images/task5.png) 
 The endpoint should be empty.
 
 ### Verification Answer
@@ -429,7 +435,8 @@ Describe the Pod
 ```bash
 kubectl describe pod startup-pod
 ```
-
+![snapshot](images/task6.a.png) 
+![snapshot](images/task6.b.png) 
 ### Verification Answer
 
 If **failureThreshold** were **2**, Kubernetes would allow only **10 seconds** (2 × 5 seconds) before declaring startup failure. Since the application needs about **20 seconds** to start, Kubernetes would repeatedly kill and restart the container, resulting in a CrashLoopBackOff.
