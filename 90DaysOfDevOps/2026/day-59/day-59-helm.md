@@ -51,7 +51,7 @@ helm version
 ```
 
 Record the installed Helm version.
-
+![snapshot](images/task1.png) 
 ---
 
 # Task 2 – Add a Repository and Search
@@ -83,13 +83,13 @@ Search all Bitnami charts:
 ```bash
 helm search repo bitnami
 ```
-
+![snapshot](images/task2.a.png) 
 Count available charts:
 
 ```bash
 helm search repo bitnami | wc -l
 ```
-
+![snapshot](images/task2.b.png) 
 ### Verification Answer
 
 Record how many charts are available in the Bitnami repository.
@@ -107,7 +107,7 @@ Install NGINX:
 ```bash
 helm install my-nginx bitnami/nginx
 ```
-
+![snapshot](images/task3.a.png) 
 Check Kubernetes resources:
 
 ```bash
@@ -125,13 +125,14 @@ Check release status:
 ```bash
 helm status my-nginx
 ```
+![snapshot](images/task3.b.png) 
 
 View generated manifests:
 
 ```bash
 helm get manifest my-nginx
 ```
-
+![snapshot](images/task3.c.png) 
 ### Verification Answer
 
 Check Pods:
@@ -145,7 +146,7 @@ Check Service:
 ```bash
 kubectl get svc
 ```
-
+![snapshot](images/task3.d.png) 
 Record:
 
 * Number of Pods running
@@ -164,6 +165,7 @@ View default values:
 ```bash
 helm show values bitnami/nginx
 ```
+![snapshot](images/task4.a.png) 
 
 Install using command-line overrides:
 
@@ -172,6 +174,7 @@ helm install nginx-cli bitnami/nginx \
 --set replicaCount=3 \
 --set service.type=NodePort
 ```
+![snapshot](images/task4.b.png) 
 
 ---
 
@@ -222,6 +225,7 @@ kubectl get deployment
 ```bash
 kubectl get svc
 ```
+![snapshot](images/task4.c.png) 
 
 ### Verification Answer
 
@@ -243,6 +247,7 @@ Upgrade the release:
 ```bash
 helm upgrade my-nginx bitnami/nginx --set replicaCount=5
 ```
+![snapshot](images/task5.1.png) 
 
 Verify Deployment:
 
@@ -267,6 +272,7 @@ View history again:
 ```bash
 helm history my-nginx
 ```
+![snapshot](images/task5.2.png) 
 
 Expected revisions:
 
@@ -296,6 +302,7 @@ Create a chart:
 ```bash
 helm create my-app
 ```
+![snapshot](images/task6.1.png) 
 
 View directory:
 
@@ -430,7 +437,7 @@ Now there should be **5 replicas**.
 
 * After install → **3 replicas**
 * After upgrade → **5 replicas**
-
+![snapshot](images/task6.2.png) 
 ---
 
 # Task 7 – Clean Up
@@ -486,6 +493,7 @@ Expected:
 ```text
 No releases found.
 ```
+![snapshot](images/task7.png) 
 
 ### Verification Answer
 
