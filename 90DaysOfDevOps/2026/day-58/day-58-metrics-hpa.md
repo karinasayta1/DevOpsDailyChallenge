@@ -102,7 +102,7 @@ Record your node's CPU and memory usage from:
 ```bash
 kubectl top nodes
 ```
-
+![snapshot](images/task1.png) 
 ---
 
 # Task 2 – Explore kubectl top
@@ -137,12 +137,7 @@ kubectl top pods -A --sort-by=memory
 
 Identify the Pod using the highest CPU.
 
-Example:
-
-```text
-php-apache-6b7b8d76d5-xyz12
-```
-
+![snapshot](images/task2.png) 
 ---
 
 # Task 3 – Create a Deployment with CPU Requests
@@ -209,7 +204,8 @@ kubectl top pod
 ### Verification Answer
 
 Record the CPU usage displayed for the Pod.
-
+![snapshot](images/task3.png) 
+---
 ---
 
 # Task 4 – Create an HPA (Imperative)
@@ -260,8 +256,9 @@ or
 
 ### Verification Answer
 
-Record the value shown under the **TARGETS** column.
-
+Record the value shown under the **TARGETS** column. 0%
+![snapshot](images/task4.png) 
+---
 ---
 
 # Task 5 – Generate Load and Watch Autoscaling
@@ -319,8 +316,9 @@ The HPA will eventually scale the Deployment back down after approximately five 
 
 ### Verification Answer
 
-Record the highest number of replicas reached during the load test.
-
+Record the highest number of replicas reached during the load test. - 10
+![snapshot](images/task5.a.png) 
+![snapshot](images/task5.b.png) 
 ---
 
 # Task 6 – Create an HPA from YAML (Declarative)
@@ -395,7 +393,8 @@ The **behavior** section controls:
 * Scaling policies
 
 It prevents rapid fluctuations in the number of replicas.
-
+![snapshot](images/task6.png) 
+---
 ---
 
 # Task 7 – Clean Up
@@ -425,7 +424,8 @@ kubectl delete pod load-generator
 ```
 
 Leave the Metrics Server installed.
-
+![snapshot](images/task7.png) 
+---
 ---
 
 # Key Concepts
