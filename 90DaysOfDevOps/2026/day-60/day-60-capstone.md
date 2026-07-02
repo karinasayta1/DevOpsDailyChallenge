@@ -49,7 +49,7 @@ kubectl config view --minify
 ```
 
 Current namespace should be `capstone`.
-
+![snapshot](images/task1-namespace.png) 
 ---
 
 # Task 2 – Deploy MySQL
@@ -128,7 +128,7 @@ Verify:
 kubectl get secret
 kubectl describe secret mysql-secret
 ```
-
+![snapshot](images/task1-secrets.png) 
 ---
 
 ## Step 2: Create the Headless Service
@@ -167,7 +167,7 @@ Expected:
 NAME      TYPE        CLUSTER-IP   PORT(S)
 mysql     ClusterIP   None         3306/TCP
 ```
-
+![snapshot](images/task2-headless_service.png) 
 ---
 
 ## Step 3: Create the StatefulSet
@@ -234,7 +234,6 @@ Apply:
 ```bash
 kubectl apply -f mysql-statefulset.yaml
 ```
-
 ---
 
 ## Step 4: Verify Resources
@@ -250,6 +249,7 @@ Check Pod:
 ```bash
 kubectl get pods
 ```
+![snapshot](images/task2_statefulset.png) 
 
 Check PVC:
 
@@ -293,7 +293,7 @@ Exit MySQL:
 ```sql
 exit
 ```
-
+![snapshot](images/task2_mysql.png) 
 ---
 
 ## Success Checklist
@@ -374,7 +374,7 @@ Verify:
 kubectl get configmap
 kubectl describe configmap wordpress-config
 ```
-
+![snapshot](images/task3_configmap.png) 
 ---
 
 ## Step 2: Create the WordPress Deployment
@@ -470,7 +470,6 @@ Expected output:
 NAME        READY   UP-TO-DATE   AVAILABLE
 wordpress   2/2     2            2
 ```
-
 ---
 
 ## Step 4: Verify the Pods
@@ -505,7 +504,7 @@ Expected output:
 ```
 deployment "wordpress" successfully rolled out
 ```
-
+![snapshot](images/task3_rollout_logs.png) 
 ---
 
 ## Step 6: Check the Pod Logs
@@ -521,6 +520,7 @@ Example:
 ```bash
 kubectl logs wordpress-6d6b7f6bb7-abcde
 ```
+![snapshot](images/task3_deployment.png) 
 
 Verify there are no database connection errors.
 
@@ -554,7 +554,7 @@ Exit the container:
 ```bash
 exit
 ```
-
+![snapshot](images/task3_env.png) 
 ---
 
 ## Step 8: Verify Readiness and Liveness Probes
@@ -568,7 +568,7 @@ kubectl describe pod <wordpress-pod-name>
 Scroll to the **Readiness** and **Liveness** sections.
 
 Verify both probes are configured and there are no probe failures in the Events section.
-
+![snapshot](images/task3_probles.png) 
 ---
 
 ## Success Checklist
@@ -659,7 +659,7 @@ Endpoints:
 10.244.0.5:80
 10.244.0.6:80
 ```
-
+![snapshot](images/task4_wordpress_service.png) 
 ---
 
 ## Step 3: Verify the Endpoints
@@ -701,7 +701,7 @@ Open your browser and visit:
 ```text
 http://localhost:8080
 ```
-
+![snapshot](images/task4_wordpress.png) 
 ---
 
 ### If using Minikube
@@ -735,6 +735,8 @@ Password: Admin@123
 
 Your Email: kareenasayta045@gmail.com
 ```
+![snapshot](images/task4_enter_details.png) 
+
 
 4. Click **Install WordPress**.
 
@@ -802,7 +804,7 @@ Posts → All Posts
 
 Verify that your published post is visible.
 
-
+![snapshot](images/task4_blog_post.png) 
 ---
 
 ### Kubernetes Resources
@@ -813,6 +815,7 @@ Run:
 kubectl get all -n capstone
 ```
 
+![snapshot](images/task3_get_all_capstone.png) 
 
 ## Success Checklist
 
@@ -844,6 +847,7 @@ Delete MySQL.
 ```bash
 kubectl delete pod mysql-0
 ```
+![snapshot](images/task5_self-healing.png) 
 
 StatefulSet recreates it using the same PVC.
 
@@ -970,6 +974,7 @@ Verify:
 - Maximum replicas = `10`
 - CPU target = `50%`
 
+![snapshot](images/task6_hpa.png) 
 ---
 
 ## Step 6: Verify All Resources
@@ -1035,6 +1040,7 @@ Monitor the Pods:
 ```bash
 kubectl get pods -w
 ```
+![snapshot](images/task6-hpa2.png) 
 
 If CPU usage exceeds **50%**, Kubernetes automatically increases the number of WordPress Pods (up to a maximum of **10** replicas).
 
@@ -1043,7 +1049,7 @@ After testing, delete the load generator:
 ```bash
 kubectl delete pod load-generator
 ```
-
+![snapshot](images/task6-hpa3.png) 
 ---
 
 ## Success Checklist
@@ -1090,6 +1096,7 @@ kubectl config set-context --current --namespace=default
 ```
 
 Deleting the namespace removes almost every resource created in the project.
+![snapshot](images/task7-helm_uninstall.png) 
 
 ---
 
