@@ -1084,7 +1084,7 @@ Cleanup:
 ```bash
 helm uninstall wp-helm
 ```
-
+![snapshot](images/task7-helm.png) 
 ---
 
 # Task 8 – Cleanup
