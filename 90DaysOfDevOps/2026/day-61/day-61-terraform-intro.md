@@ -1,4 +1,4 @@
-# Day 61 -- Introduction to Terraform and Your First AWS Infrastructure
+# Day 61 - Introduction to Terraform and Your First AWS Infrastructure
 
 ## Task 1: Understand Infrastructure as Code
 Before touching the terminal, research and write short notes on:
@@ -53,7 +53,7 @@ choco install terraform
 terraform -version
 ```
 
-   ![snapshot](images/2-a.png)
+   ![snapshot](images/install_terraform.png)
 
 3. Install and configure the AWS CLI:
 ```bash
@@ -82,6 +82,7 @@ Create a file called `main.tf` with:
 2. A `provider "aws"` block with your region
 3. A `resource "aws_s3_bucket"` that creates a bucket with a globally unique name
 
+
 Run the Terraform lifecycle:
 ```bash
 terraform init      # Download the AWS provider
@@ -91,7 +92,7 @@ terraform apply     # Create the bucket (type 'yes' to confirm)
 
 Go to the AWS S3 console and verify your bucket exists.
 
-   ![snapshot](images/3-a.png)
+   ![snapshot](images/s3_bucket.png)
 
 **Document:** What did `terraform init` download? What does the `.terraform/` directory contain?
    - `terraform init` downloads providers details.
@@ -114,7 +115,7 @@ terraform apply
 
 Go to the AWS EC2 console and verify your instance is running with the correct name tag.
 
-   ![snapshot](images/4.png)
+   ![snapshot](images/ec2_instance.png)
 
 **Document:** How does Terraform know the S3 bucket already exists and only the EC2 instance needs to be created?
    - because terrafomr maintains state file.
@@ -130,14 +131,14 @@ Terraform tracks everything it creates in a state file. Time to inspect it.
 terraform show                          # Human-readable view of current state
    - all resources created with detail
 terraform state list                    # List all resources Terraform manages
- 
-   ![snapshot](images/5-a.png)
 
 terraform state show aws_s3_bucket.<name>   # Detailed view of a specific resource
    - detail view of my_bucket
 terraform state show aws_instance.<name>
    - detail vier of my-instance
 ```
+ ![snapshot](images/5_a.png)
+  ![snapshot](images/5_b.png)
 
 3. Answer these questions in your notes:
    - What information does the state file store about each resource?
@@ -166,8 +167,8 @@ terraform state show aws_instance.<name>
 3. Apply the change
 4. Verify the tag changed in the AWS console
 
-   ![snapshot](images/6.png)
-
+   ![snapshot](images/6_a.png)
+   ![snapshot](images/6_b.png)
 5. Finally, destroy everything:
 ```bash
 terraform destroy
