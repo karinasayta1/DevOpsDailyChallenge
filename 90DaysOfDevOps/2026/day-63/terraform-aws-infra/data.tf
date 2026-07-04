@@ -10,7 +10,7 @@ data "aws_ami" "amazon_linux" {
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+    values = ["amzn2-ami-hvm-*-x86_64-gp*"]
   }
 
   filter {
@@ -18,13 +18,7 @@ data "aws_ami" "amazon_linux" {
     values = ["hvm"]
   }
 
-  filter {
-    name   = "root-device-type"
-    values = ["gp2"]
-  }
-
 }
-
 ##################################
 # Availability Zones
 ##################################

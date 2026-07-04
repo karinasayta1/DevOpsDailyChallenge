@@ -6,9 +6,9 @@ resource "aws_vpc" "main" {
 
   cidr_block = var.vpc_cidr
 
-  tags = {
-    Name = "${var.project_name}-vpc"
-  }
+  tags = merge(local.common_tags, {
+    Name = "${local.name_prefix}-vpc"
+  })
 
 }
 
@@ -23,9 +23,9 @@ resource "aws_subnet" "public" {
   availability_zone       = data.aws_availability_zones.available.names[0]
   map_public_ip_on_launch = true
 
-  tags = {
-    Name = "${var.project_name}-public-subnet"
-  }
+  tags = merge(local.common_tags, {
+    Name = "${local.name_prefix}-subnet"
+  })
 
 }
 
@@ -37,9 +37,9 @@ resource "aws_internet_gateway" "igw" {
 
   vpc_id = aws_vpc.main.id
 
-  tags = {
-    Name = "${var.project_name}-igw"
-  }
+  tags = merge(local.common_tags, {
+    Name = "${local.name_prefix}-igw"
+  })
 
 }
 
@@ -52,15 +52,13 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
   route {
-
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
-
   }
 
-  tags = {
-    Name = "${var.project_name}-public-route-table"
-  }
+  tags = merge(local.common_tags, {
+    Name = "${local.name_prefix}-public-route-table"
+  })
 
 }
 
@@ -81,7 +79,7 @@ resource "aws_route_table_association" "public" {
 
 resource "aws_security_group" "main" {
 
-  name        = "${var.project_name}-sg"
+  name        = "${local.name_prefix}-sg"
   description = "Allow SSH and HTTP"
   vpc_id      = aws_vpc.main.id
 
@@ -112,9 +110,9 @@ resource "aws_security_group" "main" {
 
   }
 
-  tags = {
-    Name = "${var.project_name}-sg"
-  }
+  tags = merge(local.common_tags, {
+    Name = "${local.name_prefix}-sg"
+  })
 
 }
 
@@ -135,12 +133,12 @@ resource "aws_instance" "main" {
 
   associate_public_ip_address = true
 
-  tags = {
-    Name = "${var.project_name}-server"
-  }
+  tags = merge(local.common_tags, {
+    Name = "${local.name_prefix}-server"
+  })
 
   lifecycle {
-    create_before_destroy = true
+    create_before_destroy = false
   }
 
 }
@@ -156,5 +154,9 @@ resource "aws_s3_bucket" "logs" {
   depends_on = [
     aws_instance.main
   ]
+
+  tags = merge(local.common_tags, {
+    Name = "${local.name_prefix}-logs"
+  })
 
 }
