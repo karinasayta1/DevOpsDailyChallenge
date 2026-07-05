@@ -1,7 +1,7 @@
 # Day 90 -- Grand Finale: The Complete DevOps Journey
 
 ## Task
-90 days. From `ls` to AI-powered self-healing Kubernetes agents. Today you step back, connect every block, reflect on how far you have come, and map out what comes next. No new tools. No new configs. Just clarity on what you built and where you go from here.
+90 days From `ls` to AI-powered self-healing Kubernetes agents. Today you step back, connect every block, reflect on how far you have come, and map out what comes next. No new tools. No new configs. Just clarity on what you built and where you go from here.
 
 ---
 
