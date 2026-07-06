@@ -251,7 +251,7 @@ Updates the state file with the latest information from the cloud provider witho
 - State commands (`show`, `list`, `mv`, `rm`, `force-unlock`) help manage and troubleshoot infrastructure without directly modifying cloud resources.
 
 
-#Task 1: Inspect Your Current State
+# Task 1: Inspect Your Current State
 Use your Day 63 config (or create a small config with a VPC and EC2 instance). Apply it and then explore the state:
 
 
