@@ -416,7 +416,7 @@ Display cluster information.
 kubectl cluster-info
 ```
  ![snapshot](images/4-b.png)
- 
+
 ---
 
 ## Verify
@@ -427,7 +427,7 @@ You should see:
 - ✅ `kube-system` pods running.
 - ✅ `kubectl` successfully connected to the EKS cluster.
 
-   ![snapshot](images/4-b.png)
+   ![snapshot](images/4-c.png)
 
 **Verify:** Do you see 2 nodes in `Ready` state? Can you see the kube-system pods running?
 * **YES**
@@ -437,7 +437,7 @@ You should see:
 ## Task 5: Deploy a Workload on the Cluster
 Your Terraform-provisioned cluster is live. Deploy something on it.
 
-1. Create a file `k8s/nginx-deployment.yaml`:
+1. Create a file `nginx-deployment.yaml`:
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -476,7 +476,7 @@ spec:
 
 2. Apply:
 ```bash
-kubectl apply -f k8s/nginx-deployment.yaml
+kubectl apply -f nginx-deployment.yaml
 ```
 
 3. Wait for the LoadBalancer to get an external IP:
@@ -510,7 +510,7 @@ This is the most important step. EKS clusters cost money. Clean up completely.
 
 1. First, remove the Kubernetes resources (so the AWS LoadBalancer gets deleted):
 ```bash
-kubectl delete -f k8s/nginx-deployment.yaml
+kubectl delete -f nginx-deployment.yaml
 ```
 
 2. Wait for the LoadBalancer to be fully removed (check EC2 > Load Balancers in AWS console)
