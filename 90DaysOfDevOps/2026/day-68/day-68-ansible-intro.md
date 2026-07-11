@@ -1,4 +1,4 @@
-# Day 68 -- Introduction to Ansible and Inventory Setup
+# Day 68 - Introduction to Ansible and Inventory Setup
 
 ## Task 1: Understand Ansible
 Research and write short notes on:
