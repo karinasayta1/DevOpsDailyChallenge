@@ -1,0 +1,137 @@
+# ── Step 1: Install Docker dependencies ──────────────────────────────────────
+- name: Install Docker dependencies
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+      - software-properties-common
+    state: present
+    update_cache: true
+  tags: docker
+
+# ── Step 3: Add Docker CE repository ─────────────────────────────────────────
+- name: install docker
+  shell: |
+    sudo apt update
+    sudo apt install ca-certificates curl
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+    sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+    Types: deb
+    URIs: https://download.docker.com/linux/ubuntu
+    Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+    Components: stable
+    Architectures: $(dpkg --print-architecture)
+    Signed-By: /etc/apt/keyrings/docker.asc
+    EOF
+    sudo apt update
+  tags: docker
+
+# ── Step 4: Install Docker CE ────────────────────────────────────────────────
+- name: Install Docker CE
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+    state: present
+    update_cache: true
+  notify: Restart Docker      #Trigger an handler to run at the end of run.
+  tags: docker
+
+# ── Step 5: Start and enable Docker service ───────────────────────────────────
+- name: Start and enable Docker service
+  service:
+    name: docker
+    state: started
+    enabled: true
+  tags: docker
+
+# ── Step 6 : Create Deploy User ───────────────────────────────────
+- name: Create Deploy User
+  user:
+    name: deploy
+    shell: /bin/bash
+    create_home: true
+  tags: docker
+
+
+# ── Step 7: Add deploy user to docker group ───────────────────────────────────
+- name: Add deploy user to docker group
+  user:
+    name: deploy
+    groups: docker
+    append: true
+  tags: docker
+
+# ── Step 8: Install Docker Compose ────────────────────────────────────────────
+- name: Install Docker Compose plugin
+  apt:
+    name:
+      - docker-compose-plugin
+    state: present
+  tags: docker
+
+# ── Step 9: Log in to Docker Hub (vault-encrypted credentials) ────────────────
+- name: Log in to Docker Hub
+  community.docker.docker_login:
+    username: "{{ vault_docker_username }}"
+    password: "{{ vault_docker_password }}"
+  no_log: true
+  when: vault_docker_username is defined
+  tags: docker
+
+# ── Step 10: Pull application image ────────────────────────────────────────────
+- name: Pull application image
+  community.docker.docker_image:
+    name: "{{ docker_app_image }}"
+    tag: "{{ docker_app_tag }}"
+    source: pull
+  tags: docker
+
+# ── Step 11: Stop old Container on same port ────────────────────────────────────────
+- name: Stop and remove old container on same port
+  community.docker.docker_container:
+    name: "{{ docker_app_name }}"
+    state: absent
+  tags: docker
+
+- name: Stop any container using the app port
+  shell: |
+    CONTAINER=$(docker ps -q --filter "publish={{ docker_app_port }}")
+    if [ -n "$CONTAINER" ]; then
+      docker stop $CONTAINER && docker rm $CONTAINER
+    fi
+  tags: docker
+
+# ── Step 12: Run application container ────────────────────────────────────────
+- name: Run application container
+  community.docker.docker_container:
+    name: "{{ docker_app_name }}"
+    image: "{{ docker_app_image }}:{{ docker_app_tag }}"
+    state: started
+    restart_policy: always
+    ports:
+      - "{{ docker_app_port }}:{{ docker_container_port }}"
+  tags: docker
+
+# ── Step 13: Verify container is healthy ──────────────────────────────────────
+
+- name: Wait for container to be healthy
+  uri:
+    url: "http://localhost:{{ docker_app_port }}"
+    status_code: 200
+    validate_certs: no
+    timeout: 5
+  retries: 5
+  delay: 3
+  register: health_check
+  until: health_check.status == 200
+  check_mode: no
+  tags: docker
