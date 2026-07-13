@@ -1,4 +1,4 @@
-# Day 69 -- Ansible Playbooks and Modules
+# Day 69 - Ansible Playbooks and Modules
 
 ## Task 1: Your First Playbook
 Create `install-nginx.yml`:
@@ -9,9 +9,13 @@ Create `install-nginx.yml`:
   hosts: web
   become: true
 
-  tasks:`
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
     - name: Install Nginx
-      yum:
+      apt:
         name: nginx
         state: present
 
@@ -24,14 +28,14 @@ Create `install-nginx.yml`:
     - name: Create a custom index page
       copy:
         content: "<h1>Deployed by Ansible - TerraWeek Server</h1>"
-        dest: /usr/share/nginx/html/index.html
+        dest: /var/www/html/index.html
 ```
 
 (Use `apt` instead of `yum` if your instances run Ubuntu)
 
 Run it:
 ```bash
-ansible-playbook install-nginx.yml
+ ansible-playbook -i inventory.ini install-nginx.yml
 ```
 
    ![snapshot](images/1-a.png)
@@ -92,7 +96,7 @@ Practice each of these modules by writing a playbook called `essential-modules.y
 1. **`yum`/`apt`** -- Install and remove packages:
 ```yaml
 - name: Install multiple packages
-  yum:
+  apt:
     name:
       - git
       - curl
