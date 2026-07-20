@@ -199,7 +199,6 @@ kubectl set image deployment/bankapp bankapp=nginx:latest -n bankapp
 ```
 
    ![snapshot](images/4-d.png)
-   ![snapshot](images/4-e.png)
    ![snapshot](images/4-f.png)
    ![snapshot](images/4-g.png)
 
@@ -343,7 +342,7 @@ contents: write
 
 #environemnt variable used later
 env:
-DOCKERHUB_REPO: afroz25/ai-bankapp-eks
+DOCKERHUB_REPO: karinasayta1/ai-bankapp-eks
 
 #Creates a job named build-and-push runs on a fresh Ubuntu virtual machine
 jobs:
